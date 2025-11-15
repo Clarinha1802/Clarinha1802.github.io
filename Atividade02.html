@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+    <style>
+
+        #geral {
+            text-align: center;
+            width: 250px;
+            height: 200px;
+            
+            margin: auto;
+            padding: 10px 10px 10px 10px;
+            
+            border: 2px solid;
+            border-color: purple;
+
+        }
+
+        h1{
+            color: rgb(167, 106, 202);
+            text-align: center;
+        }
+        #resultadoDiv {
+            max-width: 100px;
+            height: 200px;
+            
+        }
+        button{
+            color: rgb(14, 43, 68);
+            background-color: rgb(202, 161, 206);
+        }
+    </style>
+</head>
+<body>
+    <h1>Cálculo do IMC</h1>
+
+    <div id="geral">
+        <div id="caixaNome">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome">
+        </div>
+
+        <div>
+            <label for="peso">Peso(Kg):</label>
+            <input type="number" id="peso">
+        </div>
+
+        <div>
+            <label for="altura">Altura(m):</label>
+            <input type="number" id="altura">
+
+        </div>
+
+        <button type="button" onclick="calcularImc()">Calcular</button>
+
+        <div id="resultado">
+            <textarea name="resultadoDiv" id="resultado_Div" readonly></textarea>
+            
+        </div>
+
+    </div>
+
+
+
+        <script>
+            function calcularImc(){
+
+                const textarea = document.querySelector('#mostarResultado')
+
+                let nome = document.getElementById('nome').value
+
+                let peso = document.getElementById('peso').value
+
+                let altura = document.getElementById('altura').value
+                
+                let resultadoDiv = document.getElementById('resultado_Div')
+
+
+
+                let calculo = peso / (altura * altura)
+
+            resultadoDiv.innerHTML = `Olá, ${nome}. Seu IMC é ${calculo.toFixed(2)}`
+            }
+
+        </script>
+        
+</body>
+</html>
