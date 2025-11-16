@@ -3,89 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade 2</title>
+    <title>Atividade 1</title>
     <style>
-
-        #geral {
-            text-align: center;
-            width: 250px;
-            height: 200px;
-            
-            margin: auto;
-            padding: 10px 10px 10px 10px;
-            
-            border: 2px solid;
-            border-color: purple;
-
-        }
-
         h1{
-            color: rgb(167, 106, 202);
             text-align: center;
+            color: black;
         }
-        #resultadoDiv {
-            max-width: 100px;
-            height: 200px;
+        #nomeCom {
+            display: flex;
+            float: left;
+        }
+
+        #nomePrim{
+
+        }
+
+        #sob
+        form {
+            text-align: center;
+            max-width: 600px;
+            max-height: 600px;
+            margin: auto;
+        }
+        button {
             
-        }
-        button{
-            color: rgb(14, 43, 68);
-            background-color: rgb(202, 161, 206);
+
+            background-color: rgb(66, 142, 209);
+            color: rgb(255, 255, 255);
         }
     </style>
 </head>
 <body>
-    <h1>Cálculo do IMC</h1>
+   <h1>Nome completo</h1>
 
-    <div id="geral">
-        <div id="caixaNome">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome">
+    <form>
+        <div id="nomeCom">
+            <label >Nome completo:</label>
+            <input type="text" id="nomeCompleto">
         </div>
+        
 
-        <div>
-            <label for="peso">Peso(Kg):</label>
-            <input type="number" id="peso">
+        <button type="button" onClick='separacao()'>>>></button>
+    
+        <div id="nomepri">
+            <label>Nome:</label>
+            <input type="text" id="primNome">
+            <br>
         </div>
-
-        <div>
-            <label for="altura">Altura(m):</label>
-            <input type="number" id="altura">
-
+        
+        
+        <div id="sobrNome">
+            <label>Sobrenome:</label>
+            <input type="text" id="sobreNome">
         </div>
+        
 
-        <button type="button" onclick="calcularImc()">Calcular</button>
+    </form>
 
-        <div id="resultado">
-            <textarea name="resultadoDiv" id="resultado_Div" readonly></textarea>
-            
-        </div>
+    <script>
+        function separacao() {
+            let nome = document.getElementById('nomeCompleto').value
 
-    </div>
-
-
-
-        <script>
-            function calcularImc(){
-
-                const textarea = document.querySelector('#mostarResultado')
-
-                let nome = document.getElementById('nome').value
-
-                let peso = document.getElementById('peso').value
-
-                let altura = document.getElementById('altura').value
-                
-                let resultadoDiv = document.getElementById('resultado_Div')
+            let espaco = nome.indexOf(' ')
 
 
-
-                let calculo = peso / (altura * altura)
-
-            resultadoDiv.innerHTML = `Olá, ${nome}. Seu IMC é ${calculo.toFixed(2)}`
+            if(espaco === -1) {
+                console.log("Digite um valor válido.")
+                return
             }
 
-        </script>
-        
+            let primeiroNome = nome.substring(0, espaco)
+            document.getElementById('primNome').value = primeiroNome
+
+            let sobrenome = nome.substring(espaco + 1)
+            document.getElementById('sobreNome').value = sobrenome
+
+
+
+
+
+        }
+    </script>
+
+
+
+
 </body>
 </html>
