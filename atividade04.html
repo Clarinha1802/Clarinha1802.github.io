@@ -158,40 +158,40 @@
             funAnterior()
         })
 
+                
+        const botoesAjuste = document.querySelectorAll(".controle-ajuste");
         
-const botoesAjuste = document.querySelectorAll(".controle-ajuste");
-
-
-botoesAjuste.forEach((botao) => {
-    botao.addEventListener("click", (evento) => {
-        manipulaContador(evento.target);
-    });
-});
-
-
-function manipulaContador(botao) {
-    const contador = botao.parentNode.querySelector(".controle-contador");
-
-    let valorAtual = parseInt(contador.value);
-
-    
-    let operacao;
-    if(botao.id === "mais"){
-        operacao = "+"
-    } else{
-        operacao = "-"
-    }
-    if (operacao === "+" && valorAtual < 10) {
-        valorAtual++
         
-    
-    } else if (operacao === "-" && valorAtual > 0) {
-        valorAtual--
-    }
-
-    
-    contador.value = String(valorAtual).padStart(2, '0')
-}
+        botoesAjuste.forEach((botao) => {
+            botao.addEventListener("click", (evento) => {
+                manipulaContador(evento.target);
+            });
+        });
+        
+        
+        function manipulaContador(botao) {
+            const contador = botao.parentNode.querySelector(".controle-contador");
+        
+            let valorAtual = parseInt(contador.value);
+        
+            
+            let operacao;
+            if(botao.id === "mais"){
+                operacao = "+"
+            } else{
+                operacao = "-"
+            }
+            if (operacao === "+" && valorAtual < 10) {
+                valorAtual++
+                
+            
+            } else if (operacao === "-" && valorAtual > 0) {
+                valorAtual--
+            }
+        
+            
+            contador.value = String(valorAtual).padStart(2, '0')
+        }
 
     </script>
 </body>
