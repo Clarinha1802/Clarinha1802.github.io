@@ -49,53 +49,51 @@
         <section class="equipamentos">
             <form action="" class="montador">
                 <div class="box montador-conteudo">
-                    
                     <div class="peca">
                         <label for="" class="peca-titulo">Braços</label>
                         <div class="controle">
-                            <buttom class="controle-ajuste" id="menos">-</buttom>
+                            <buttom class="controle-ajuste">-</buttom>
                             <input type="text" class="controle-contador" value="00">
-                            <buttom class="controle-ajuste" id="mais">+</buttom>
+                            <buttom class="controle-ajuste">+</buttom>
                         </div>
                     </div>
                     <hr class="linha">
                     <div class="peca">
                         <label for="" class="peca-titulo">Blindagem</label>
                         <div class="controle">
-                            <buttom class="controle-ajuste" id="menos">-</buttom>
+                            <buttom class="controle-ajuste">-</buttom>
                             <input type="text" class="controle-contador" value="00">
-                            <buttom class="controle-ajuste" id="mais">+</buttom>
+                            <buttom class="controle-ajuste">+</buttom>
                         </div>
                     </div>
                     <hr class="linha">
                     <div class="peca">
                         <label for="" class="peca-titulo">Núcleos</label>
                         <div class="controle">
-                            <buttom class="controle-ajuste" id="menos">-</buttom>
+                            <buttom class="controle-ajuste">-</buttom>
                             <input type="text" class="controle-contador" value="00">
-                            <buttom class="controle-ajuste" id="mais">+</buttom>
+                            <buttom class="controle-ajuste">+</buttom>
                         </div>
                     </div>
                     <hr class="linha">
                     <div class="peca">
                         <label for="" class="peca-titulo">Pernas</label>
                         <div class="controle">
-                            <buttom class="controle-ajuste" id="menos">-</buttom>
+                            <buttom class="controle-ajuste">-</buttom>
                             <input type="text" class="controle-contador" value="00">
-                            <buttom class="controle-ajuste" id="mais">+</buttom>
+                            <buttom class="controle-ajuste">+</buttom>
                         </div>
                     </div>
                     <hr class="linha">
                     <div class="peca">
                         <label for="" class="peca-titulo">Foguetes</label>
                         <div class="controle">
-                            <buttom class="controle-ajuste" id="menos">-</buttom>
+                            <buttom class="controle-ajuste">-</buttom>
                             <input type="text" class="controle-contador" value="00">
-                            <buttom class="controle-ajuste" id="mais">+</buttom>
+                            <buttom class="controle-ajuste">+</buttom>
                         </div>
                     </div>
                 </div>
-                
 
                 <div class="cores">
                     <button type="button" id="anterior"><<<</button>
@@ -111,12 +109,12 @@
     <script>
         
         const cores = [
-        'img/robotron-amarelo.png',
-        'img/robotron-azul.png', 
-        'img/robotron-branco.png', 
-        'img/robotron-preto.png',
-        'img/robotron-rosa.png',
-        'img/robotron-vermelho.png']
+        'robotron-amarelo.png',
+        'robotron-azul.png', 
+        'robotron-branco.png', 
+        'robotron-preto.png',
+        'robotron-rosa.png',
+        'robotron-vermelho.png']
         const robotron = document.querySelector('.robo')
         const anterior = document.getElementById('anterior')
         const proximo = document.getElementById('proximo')
@@ -158,7 +156,7 @@
             funAnterior()
         })
 
-        
+                
 const botoesAjuste = document.querySelectorAll(".controle-ajuste");
 
 
@@ -192,6 +190,8 @@ function manipulaContador(botao) {
     
     contador.value = String(valorAtual).padStart(2, '0')
 }
+
+
 
     </script>
 </body>
