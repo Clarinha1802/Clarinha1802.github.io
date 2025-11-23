@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 05</title>
+    
+    <style>
+         h1, h2{
+            text-align: center;
+        }
+
+        #dadosPessoais{
+            text-align: center;
+        }
+        form{
+            text-align: center;
+            border: 2px solid black;
+            width: 900px;
+            margin: auto;
+            
+        }
+
+        #turno{
+            display: flex;
+            
+        }
+        #outrasInformacoes{
+            text-align: center;
+        }
+        #dia, #mes{
+            width: 30px;
+        }
+        #ano{
+            width: 50px;
+        }
+        #ddd{
+            width: 30px;
+        }
+        #tel{
+            width: 95px;
+        }
+        #feedback{
+            border: 2px solid rgb(24, 24, 66);
+            width: 400px;
+        }
+        #botao{
+            background-color: #4CAF50;
+        color: white;             
+        padding: 10px 20px;       
+        border: none;             
+        border-radius: 5px;       
+        font-size: 16px;          
+        cursor: pointer; 
+        }
+    </style>
+ 
+</head>
+<body>
+    <h1>Escola virtual</h1>
+    <h2>Forulário de Pré-Matrícula</h2>
+
+
+    <form id="formularioCompleto">
+        <h3>Dados Pessoais:</h3>
+        <div id="dadosPessoais">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome">
+
+            <div class="caixa-data">
+            <label for="nascimento">Data de nascimento:</label>
+            <input type="text" id="dia" placeholder="AA" maxlength="2" inputmode="numeric">
+            <span>/</span>
+            <input type="text" id="mes" placeholder="MM" maxlength="2" inputmode="numeric">
+            <span>/</span>
+            <input type="text" id="ano" placeholder="CCCC" maxlength="4" inputmode="numeric">
+            <span>/</span>
+            </div>
+
+            <label for="nomeMae">Nome da mãe:</label>
+            <input type="text" name="nomeMae" id="nomeMae">
+
+            <label for="nomePai">Nome do pai:</label>
+            <input type="text" name="nomePai" id="nomePai">
+
+            <div class="telefone">
+                <label for="telefone">Telefone:</label>
+                <label for="ddd">DDD</label>
+                <input type="text" id="ddd" placeholder="AA" maxlength="2">
+
+                <label for="tel">Tel:</label>
+                <input type="text" id="tel" placeholder="AAAAA-AAAA" maxlength="11">
+
+            </div>
+
+            <label for="emailInput">E-Mail:</label>
+            <input type="text" id="emailInput" placeholder="exemplo@dominio.com">
+            
+            
+
+        </div>
+
+        <div id="outrasInformacoes">
+            <h3>Informações de Matrícula:</h3>
+            <div id="seriesCaixa">
+                <label for="series">Série:</label>
+                <select name="series" id="opcoes">
+                
+                <option value="serie1">1º ano</option>
+                <option value="serie2">2º ano</option>
+                <option value="serie3">3º ano</option>
+                
+            </select>
+            </div>
+            
+        </div>
+             
+        
+         
+            <div id="turno">
+            <label for="turno">Turno:</label>
+            <input type="checkbox" id="matutino">
+            <label for="matutino">Matutino</label>
+        
+        
+            <input type="checkbox" id="vespertino">
+            <label for="vespertino">Vespertino</label>
+        </div>
+        
+        
+
+
+        <label for="atividadesExtra">Atividades Extracurriculares:</label>
+        <div id="info">
+            <input type="checkbox" id="info_cb">
+            <label for="info">Informática</label>
+        </div>
+        <div id="musica">
+            <input type="checkbox" id="musica_cb">
+            <label for="musica">Música</label>
+        </div>
+        <div id="balet">
+            <input type="checkbox" id="balet_cb">
+            <label for="balet">Balet</label>
+        </div>
+        <div id="pintura">
+            <input type="checkbox" id="pintura_cb">
+            <label for="pintura">Pintura</label>
+        </div>
+        <div id="judo">
+            <input type="checkbox" id="judo_cb">
+            <label for="judo">Judô</label>
+        </div>
+        <div id="futebol">
+            <input type="checkbox" id="futebol_cb">
+            <label for="futebol">Futebol</label>
+        </div>
+
+        
+
+    </form>
+    <button id="botao" onclick="validarForm()">Enviar</button>
+    <h4>ATENÇÃO:</h4>
+    <p id="feedback"></p>
+
+    
+    
+
+    <script>
+    
+        const dddValidos = [
+    '11', '12', '13', '14', '15', '16', '17', '18', '19', '21', '22', '24', '27', '28', '31', '32', '33', '34', '35', '37', '38', '41', '42', '43', '44', '45', '46', '47', '48', '49',
+    '51', '53', '54', '55', '61', '62', '63', '64', '65', '66', '67', '68', '69', '71', '73', '74', '75', '77', '79', '81', '82', '83', '84', '85', '86', '87', '88', '89', '91', '92', '93', '94', '95', '96', '97', '98', '99'
+]
+
+function validarData(dia, mes, ano) {
+    const d = parseInt(dia, 10)
+    const m = parseInt(mes, 10)
+    const a = parseInt(ano, 10)
+
+    
+    if (isNaN(d) || isNaN(m) || isNaN(a) || m < 1 || m > 12 || a > new Date().getFullYear()) {
+        return false
+    }
+    const dataObj = new Date(a, m - 1, d)
+    
+    
+    const dataValida = (
+        dataObj.getFullYear() === a &&
+        dataObj.getMonth() === m - 1 &&
+        dataObj.getDate() === d
+    )
+    
+   
+    const hoje = new Date();
+    const naoEhFutura = dataObj < hoje
+
+    return dataValida && naoEhFutura
+}
+
+
+function validarForm() {
+    
+    const camposObrigatorios = [
+        { id: 'nome', nome: 'Nome' },
+        { id: 'nomeMae', nome: 'Nome da Mãe' },
+        { id: 'nomePai', nome: 'Nome do Pai' },
+        { id: 'ddd', nome: 'DDD' },
+        { id: 'tel', nome: 'Telefone' },
+        { id: 'emailInput', nome: 'E-Mail' },
+        { id: 'seriesSelect', nome: 'Série', isSelect: true } 
+    ]
+
+    const campoFeedback = document.getElementById('feedback')
+    let erros = []
+
+    camposObrigatorios.forEach(campo => {
+        const elemento = document.getElementById(campo.id) || document.querySelector(`select[name="${campo.id}"]`)
+        if (elemento && elemento.value.trim() === '') {
+            erros.push(`O campo ${campo.nome} é obrigatório.`)
+        }
+    })
+
+    
+    const dataDia = document.getElementById('dia').value.trim()
+    const dataMes = document.getElementById('mes').value.trim()
+    const dataAno = document.getElementById('ano').value.trim()
+
+    if (dataDia === "" || dataMes === "" || dataAno === "") {
+        erros.push("Os campos de Data de Nascimento são obrigatórios.")
+    } else if (!validarData(dataDia, dataMes, dataAno)) { 
+        erros.push("A Data de Nascimento é inválida ou futura.")
+    }
+    
+
+    const ddd = document.getElementById('ddd').value.trim()
+    if (ddd !== '' && !dddValidos.includes(ddd)) {
+        erros.push("O DDD informado não é válido no Brasil.")
+    }
+
+    const email = document.getElementById('emailInput').value.trim()
+    if (email !== '' && (!email.includes('@') || !email.includes('.'))) {
+        erros.push("O E-Mail precisa conter os caracteres `@` e `.`.")
+    }
+    
+    const atividadesExtra = [
+        document.getElementById('info_cb'),
+        document.getElementById('musica_cb'),
+        document.getElementById('balet_cb'),
+        document.getElementById('pintura_cb'),
+        document.getElementById('judo_cb'),
+        document.getElementById('futebol_cb')
+    ]
+    
+    const quantAtividades = atividadesExtra.filter(cb => cb && cb.checked).length;
+
+    if (quantAtividades > 3) {
+        erros.push("Você só pode selecionar no máximo 3 atividades extracurriculares.");
+    }
+
+    if (erros.length > 0) {
+        campoFeedback.style.color = "red";
+        campoFeedback.innerHTML = `Formulário incompleto:<br><ul>${erros.map(erro => `<li>${erro}</li>`).join('')}</ul>`;
+        return false;
+    } else {
+        campoFeedback.style.color = "green";
+        campoFeedback.innerHTML = "Formulário Aceito!";
+        return true;
+    }
+}
+    </script>
+</body>
+</html>  
