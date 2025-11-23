@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atvidade 6</title>
+    <style>
+        .hidden{
+            display: none;
+        }
+    
+        #tabela_gastos{
+            text-align: center;
+        }
+        h2{
+            text-align: left;
+        }
+        h1{
+            text-align: center;
+        }
+        #container{
+            text-align: center;
+        }
+        h3{
+            color: green;
+        }
+        .resumo_valores{
+            text-align: center;
+        }
+        #gastCateg{
+            text-align: left;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Cálculo de gastos</h1>
+
+    <div id="container">
+
+        <div id="entradaGastos">
+            <div class="dados" >
+                <label for="categoria">Categoria:</label>
+                <select name="categoria" id="nomeCategoria">
+                    <option value="">Selecione alguma categoria</option>
+                    <option value="mercado">Mercado</option>
+                    <option value="transporte">Transporte</option>
+                    <option value="contas">Contas</option>
+                    <option value="saude">Saúde</option>
+                    <option value="lazer">Lazer</option>
+                    <option value="outros">Outros</option>
+            </select>
+                </div>
+
+                <div class="dados">
+                    <label for="valor">Valor:</label>
+                    <input type="number" id="valor" step="0.01" min="0">
+                </div>
+
+                <div class="dados">
+                    <label for="data">Data:</label>
+                    <input type="date" id="data">
+                </div>
+            
+
+                <div class="botoes">
+                <button id="botaoAdicionar">Adicionar</button>
+                <button id="botaoCalcular">Calcular</button>
+                </div>
+
+
+
+                <h2>Tabela de gastos:</h2>
+                <table id="tabela_gastos">
+                    <thead>
+                    <tr>
+                        <th>Categoria:</th>
+                        <th>Valor:</th>
+                        <th>Data:</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        
+
+        <div id="resumo" class="hidden">
+            <h1>Resumo</h1>
+            <div class="resumo_valores">
+                <h3>Total de gastos</h3>
+                <p id="total_geral"></p>
+            </div>
+
+            <div class="resumo_valores">
+                <h3 id="gastCateg">Gastos por categoria</h3>
+                <table id="tabela_resumo">
+                    <thead>
+                        <tr>
+                            <th>Categoria:</th>
+                            <th>Valor gasto:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                
+                <div class="botoes">
+                    <button id="botaoVoltar">Voltar para a página inicial</button>
+                </div>
+        </div>
+    </div>
+
+    <script>
+
+        const gastos = []
+
+        const nomeCategorias = document.getElementById('nomeCategoria') 
+        const valorInput = document.getElementById('valor')
+        const dataInput = document.getElementById('data')
+        const gastosTabela = document.querySelector('#tabela_gastos tbody')
+        const entradaGastos = document.getElementById('entradaGastos')
+        const resumoGastos = document.getElementById('resumo')
+        const totalGeralElementos = document.getElementById('total_geral')
+        const tabelaResumo = document.querySelector('#tabela_resumo tbody')
+
+
+        document.getElementById('botaoAdicionar').addEventListener('click', () => {
+            const categoria = nomeCategorias.value
+            const dadoValor = valorInput.value
+            const data = dataInput.value
+
+            const valor = parseFloat(dadoValor)
+
+
+            if(!categoria || valor <= 0 || !data){
+                alert("Preencha as informações")
+                return
+            }
+
+            const novo_gasto = {
+                categoria : categoria,
+                valor: valor,
+                data : data
+            }
+
+            gastos.push(novo_gasto)
+
+            adicionarLinhaTabela(novo_gasto)
+
+            nomeCategorias.value = ''
+            valorInput.value = ''
+            dataInput.value = ''
+
+        })
+
+        function adicionarLinhaTabela(gasto) {
+            const newRow = gastosTabela.insertRow();
+            
+            const cellCategoria = newRow.insertCell(0);
+            const cellValor = newRow.insertCell(1);
+            const cellData = newRow.insertCell(2);
+            
+            const [year, month, day] = gasto.data.split('-');
+            const dataFormatada = `${day}/${month}/${year}`;
+
+            cellCategoria.textContent = gasto.categoria;
+            cellValor.textContent = `R$ ${gasto.valor.toFixed(2).replace('.', ',')}`; 
+            cellData.textContent = dataFormatada;
+        }
+
+        document.getElementById('botaoCalcular').addEventListener('click', () =>{
+            if(gastos.length === 0){
+            alert("Adicione algum gasto")
+            return    
+            }
+            
+            calcularResumo()
+            alternarVizualizacao('resumo')
+        })
+
+        document.getElementById('botaoVoltar').addEventListener('click', () => {
+            alternarVizualizacao('entrada')
+        })
+
+        function alternarVizualizacao(tela){
+            if(tela === 'resumo'){
+                entradaGastos.classList.add('hidden')
+                resumoGastos.classList.remove('hidden')
+            } else{
+                entradaGastos.classList.remove('hidden')
+                resumoGastos.classList.add('hidden')
+            }
+        }
+
+        function calcularResumo(){
+            let total_geral = 0
+            const resumoPorCategoria = {}
+
+            gastos.forEach(gasto => {
+                total_geral += gasto.valor
+
+                if(!resumoPorCategoria[gasto.categoria]){
+                    resumoPorCategoria[gasto.categoria] = 0
+                }
+
+                resumoPorCategoria[gasto.categoria] += gasto.valor
+            })
+
+            totalGeralElementos.textContent = `R$ ${total_geral.toFixed(2).replace('.', ',')}`;
+
+
+            tabelaResumo.innerHTML = ''; 
+            
+            for (const categoria in resumoPorCategoria) {
+                const totalCategoria = resumoPorCategoria[categoria];
+            
+                const newRow = tabelaResumo.insertRow(); 
+                const cellCategoria = newRow.insertCell(0);
+                const cellTotal = newRow.insertCell(1);
+                
+                cellCategoria.textContent = categoria;
+                cellTotal.textContent = `R$ ${totalCategoria.toFixed(2).replace('.', ',')}`;
+            }
+        }
+    </script>
+</body>
+</html>
