@@ -1,0 +1,202 @@
+/* Parte inicial e do carrosel */
+#carousel{
+    max-width: 1030px;
+    max-height: 400px;
+    display: block; 
+    justify-content: center; 
+    align-items: center;
+    
+}
+#carousel img{
+    max-width: 1000px;
+    height: 400px;
+    margin: 5%;
+    position: relative;
+    justify-content: center;
+    
+}
+.mb-3, .mb-5{
+    font-family: 'Times New Roman', Times, serif;
+}
+#nomeHorario{
+    margin-top: 10%;
+}
+.horario{
+    font-size: 110%;
+    color: rgb(151, 136, 49);
+   
+}
+
+
+/* Cardápio */
+#resumo b{
+    color: rgb(196, 174, 51);
+}
+
+#cardapio, #reservas, #contato, #promocoes{
+    background-color: black;
+    color: white;
+
+}
+p{
+    font-family:'Times New Roman', Times, serif;
+ }
+
+ #entrada, #pratos_principais, #sobremesas, #bebidas, #promocoes{
+    display:flex;
+    margin-left: 50px;
+}
+
+h3{
+    text-align: center;
+    font-size: 150%;
+    margin: 4%;
+}
+
+.card{
+   
+    display: flex;
+    margin-left: 2%;
+    max-width: 100%;
+    max-height: 200%;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.card img{
+    max-width: 250px;
+    max-height: 110px;
+}
+.card h4{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.cardapio{
+    
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    font-size: 30px;
+    color: white;
+    max-width: 100%;
+    max-height: 200%;
+    text-decoration: none;
+    margin: 5%;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(63, 62, 61);
+}
+.preco{
+    margin-top: auto; 
+    background-color: #f0f0f0;
+    padding: 5px;
+    text-align: center;
+
+}
+#promocoes img{
+    max-width: 100%;
+    max-height: 200%;
+}
+
+h2{
+    font-size: 300%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+#botao{
+    background-color: rgb(182, 162, 51);
+    color: white;
+    border-color: white;
+}
+
+
+/* Sobre nós */
+#perfil img{
+    max-width: 100%;
+    max-height: 200%;
+}
+#perfil{
+    display: flex;
+    justify-content: left;
+}
+#historia{
+    text-align: left;
+    display: flex;
+    justify-content: right;
+    color: rgb(163, 142, 24);
+}
+
+.p-2{
+    color:rgb(150, 133, 39);
+}
+
+
+
+
+
+/* Formulário */
+
+#reservas h3, #politica h3{
+    color: rgb(185, 166, 54);
+}
+
+.accordion-button{
+    color: rgb(156, 136, 21);
+}
+
+/* Galeria */
+
+.figure img{
+    max-width: 300px;
+    max-height: 220px;
+}
+.figure{
+    max-width: 400px;
+    max-height: 300px;
+}
+
+ /* Comentários */
+
+
+#comentarios h2{
+    font-size: 35px;
+}
+
+/* Contato */
+
+
+#formulário input{
+    color: black;
+    max-width: 40%;
+    display: flex;
+}
+
+#formulário h3{
+    text-align: left;
+}
+
+#comentario{
+   
+    display: flex;
+  
+}
+
+
+.text-muted {
+    color: white;
+}
+
+.nomes{
+    color: rgb(218, 190, 33);
+}
+
+#nomeForm, #nomeInfo {
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 27px;
+}
+.form-label{
+    color:rgb(156, 136, 21);
+}
+
