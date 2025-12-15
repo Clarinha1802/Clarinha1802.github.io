@@ -9,9 +9,11 @@
  <link
    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
    rel="stylesheet">
+   <link rel="stylesheet" href="restaurante.css">
+   <link rel="icon" type="image/png" href="img/icons8-sushi-96.png">
 
-<link rel="stylesheet" href="restaurante.css">
- <title>Restaurante</title>
+
+ <title>Oishī aji</title>
 </head>
 <body>
 
@@ -19,7 +21,8 @@
  <!-- ================== NAVBAR ================== -->
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
    <div class="container">
-     <a class="navbar-brand" href="#">Nome do Restaurante</a>
+    <i class="fas fa-home"><img src="img/icons8-sushi-48.png" alt=""></i>
+     <a class="navbar-brand" href="#">Oishī aji</a>
 
 
      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
@@ -46,89 +49,69 @@
  <!-- ================== 1. PÁGINA INICIAL ================== -->
  <section id="inicio" class="bg-light py-5">
    <div class="container">
-     <h1 class="mb-3">Página Inicial</h1>
+     <h1 class="mb-3">Início</h1>
      <p>
-       [Texto de boas-vindas do restaurante.] Este é um texto fictício descrevendo
-       o ambiente, o estilo e a proposta do restaurante. Substitua por um texto
-       original criado para o seu restaurante.
+        Bem-vindo ao restaurante <b>Oishī aji</b>. Aproveite o melhor da culinária Japonesas,
+        com pratos extremamente deliciosos e saborosos. Além de um ambiente moderno 
+        e aconchegante para aproveitar com família e amigos. 
      </p>
      <p>
-       [Breve visão geral.] Fale sobre o tipo de culinária, o público-alvo e o
-       clima do local (romântico, familiar, casual, etc.).
+       O restaurante <b>Oishī aji</b> têm os pratos mais típicos e diferentes da culinária Japonesa,
+       com os ingredientes de primeira e um ambiente acolhedor. Nossos pratos são para todos que 
+       procuram fazer uma viagem para o Japão sem precisar pegar um avião.
+
      </p>
 
 
      <!-- TODO: Adicionar um carousel ou imagem de destaque aqui -->
      <p class="mt-4">
-       <div id="carouselJapa" class="carousel slide mb-5" data-bs-ride="carousel">
-
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselJapa" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#carouselJapa" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#carouselJapa" data-bs-slide-to="2"></button>
-  </div>
-
-  <div class="carousel-inner rounded shadow-lg">
-
-    <!-- FOTO 1: SUSHIS -->
-    <div class="carousel-item active">
-      <img src="f2.jpg" class="d-block w-100" alt="Pratos de sushi">
-      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
-        <h5 class="fw-bold text-danger">Sushi Tradicional</h5>
-        <p>Peixes frescos e cortes perfeitos preparados por nossos sushimen.</p>
-      </div>
-    </div>
-
-    <!-- FOTO 2: RESTAURANTE ACONCHEGANTE -->
-    <div class="carousel-item">
-      <img src="f3.jpg" class="d-block w-100" alt="Ambiente japonês elegante">
-      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
-        <h5 class="fw-bold text-danger">Ambiente Japonês</h5>
-        <p>Uma experiência imersiva inspirada nos tradicionais Izakayas.</p>
-      </div>
-    </div>
-
-    <!-- FOTO 3: RESTAURANTE LOTADO -->
-    <div class="carousel-item">
-      <img src="f4.jpg" class="d-block w-100" alt="Chefs preparando sushis">
-      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
-        <h5 class="fw-bold text-danger">Culinária ao Vivo</h5>
-        <p>Chefs preparando pratos na sua frente, frescos e no melhor estilo japonês.</p>
-      </div>
-    </div>
-
-  </div>
-
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselJapa" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselJapa" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-
-</div>
-
-  
+       <div id="carousel" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="img/carrossel2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="img/f1.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="img/carrossel7.jpg" class="d-block w-100" alt="...">
+                </div>
+                
+                <div class="carousel-item">
+                <img src="img/f5.webp" class="d-block w-100" alt="...">
+                </div>
+                
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
      </p>
 
 
      <!-- TODO: Inserir horários de funcionamento (tabela ou lista) -->
      <p class="mt-4">
-       <div class="container text-center">
+      <h3 id="nomeHorario">Horários de funcionamento</h3>
+      
+       <div class="horario text-center">
         <div class="row">
-            <div class="col">
-            Segunda à sexta: 16:00h às 23:00h
-            </div>
-            <div class="col">
-            Sábado e domingo: 15:00h às 22:00h
-            </div>
-            <div class="col">
-            Feriados: Não funcionamos
-            </div>
+          <div class="col">
+            Segunda a sexta: 17h00 - 00:00h
+          </div>
+          <div class="col">
+            Sábados e domingos: 17h00 - 01:00h
+          </div>
+          <div class="col">
+            Feriados: Fechados
+          </div>
         </div>
       </div>
-    </p>
+     </p>
    </div>
  </section>
 
@@ -137,66 +120,252 @@
  <section id="cardapio" class="py-5">
    <div class="container">
      <h2 class="mb-3">Cardápio</h2>
-     <p>
-       [Descrição geral do cardápio.] Explique brevemente o tipo de pratos que o
-       restaurante oferece e como o cardápio está organizado.
+     <p id="resumo">
+       Os pratos do <b>Oishī aji</b> são feitos com ingredientes do Japão, de primeira qualidade. Apresentam sabores irresistíveis e extremamentes característicos do Japão. O restaurante <b>Oishī aji</b> é uma ótima opção para conhecer o Japão sem sair do Brasil.
      </p>
 
 
      <!-- TODO: Criar estrutura para categorias (entradas, principais, sobremesas, bebidas) -->
      <p class="mt-3">
-       [Categorias do menu.] Aqui os alunos devem organizar o cardápio usando
-       componentes do Bootstrap, por exemplo: abas (nav-tabs), cards, listas
-       ou outro componente adequado para:
      </p>
      <ul>
-       <li>Entradas</li>
-       <li>Pratos principais</li>
-       <li>Sobremesas</li>
-       <li>Bebidas</li>
+       <li class="cardapio">Entradas</li>
+       <div id="entrada">
+            <div class="card" style="width: 18rem;">
+                <img src="img/guioza.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Guioza</h4>
+                    <p class="card-text">Pastel oriental com recheio de carne moída ou legumes.</p>
+                    <p class="preco"><b>R$ 20,00(Pc)</b></p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/harumaki-de-legumes.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Hamuraki</h4>
+                    <p class="card-text">Rolinho primavera e recheado com legumes.</p>
+                    <p class="preco"><b>R$ 15,00(Pc)</b></p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/missoshiru.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Missoshiru</h4>
+                    <p class="card-text">Sopa tradicional japonesa à base de missô e dashi.</p>
+                    <p class="preco"><b>R$ 30,00</b></p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/sunomono.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Sunomono</h4>
+                    <p class="card-text">Salada refrescante de pipino e temperada.</p>
+                    <p class="preco"><b>R$ 25,00</b></p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/Tempura-de-Camarao.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Tempura</h4>
+                    <p class="card-text">Camarão envolto de uma massa crocante e leve.</p>
+                    <p class="preco"><b>R$ 20,00(Pc)</b></p>
+                </div>
+            </div>
+       </div>
+       <li class="cardapio">Pratos principais</li>
+
+       <div id="pratos_principais">
+            <div class="card" style="width: 18rem;">
+                <img src="img/sushi.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Sushi</h4>
+                    <p class="card-text">Arroz temperado com vinage combianndo diversos igredientes</p>
+                    <p class="preco"><b>R$ 25,00(Pc)</b></p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/yakisoba.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Yakisoba</h4>
+                    <p class="card-text">Macarrão frito refolgado com legumes frescos e com molho agridoce.</p>
+                    <p class="preco"><b>R$ 38,00</b></p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/ramen.avif" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Ramen</h4>
+                    <p class="card-text">Caldo nutritivo e saboro, com diversos acompanhamentos.</p>
+                    <p class="preco"><b>R$ 40,00</b></p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/temaki.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Temaki</h4>
+                    <p class="card-text">Sushi com alga nori por fora e recheado com arroz temperado, peixe cru e vegetais.</p>
+                    <p class="preco"><b>R$ 32,00(Pc)</b></p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/tonkatsu.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Tonkatsu</h4>
+                    <p class="card-text">Costeleta de porco com repolho, arroz e molho tonkatsu especial.</p>
+                    <p class="preco"><b>R$ 50,00</b></p>
+                </div>
+            </div>
+       </div>
+       
+       <li class="cardapio">Sobremesas</li>
+       <div id="sobremesas">
+            <div class="card" style="width: 18rem;">
+                <img src="img/mochi.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Mochi</h4>
+                    <p class="card-text">Bolinhos de sorvete, envolvida por uma camada de arroz glutinoso.</p>
+                    <p class="preco"><b>R$ 15,00</b></p>
+
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/banana-flambada.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Banana flambada</h4>
+                    <p class="card-text">Banana com um toque especial de conhaque, acompanhada de sorvete.</p>
+                    <p class="preco"><b>R$ 20,00</b></p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/dango.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Dango</h4>
+                    <p class="card-text">Bolinhas feitas fe farinha de arroz, coberto de molho doce.</p>
+                    <p class="preco"><b>R$ 10,00</b></p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/dorayaki.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Dorayaki</h4>
+                    <p class="card-text">Sanduíche de panqueca recheada de pasta de feijão vermelho(anko)</p>
+                    <p class="preco"><b>R$ 25,00</b></p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/kohi-zeri.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Kohi zeri</h4>
+                    <p class="card-text">Gelatina de café, acompanhada de chantilly.</p>
+                    <p class="preco"><b>R$ 18,00</b></p>
+                </div>
+            </div>
+       </div>
+       <li class="cardapio">Bebidas</li>
+       <div id="bebidas">
+            <div class="card" style="width: 18rem;">
+                <img src="img/ramune.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Ramune</h4>
+                    <p class="card-text">Refrigerantes japoneses</p>
+                    <p class="preco"><b>R$ 12,00</b></p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/refrigerantes.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Refris</h4>
+                    <p class="card-text">Refrigerantes tradicionais.</p>
+                    <p class="preco"><b>R$ 8,00</b></p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/sucha.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Sucha</h4>
+                    <p class="card-text">Combinação de sucos de frutas com chá.</p>
+                    <p class="preco"><b>R$ 10,00</b></p>
+                </div>
+              </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/sucos.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Sucos</h4>
+                    <p class="card-text">Sucos de frutas naturais.</p>
+                    <p class="preco"><b>R$ 8,00</b></p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/agua.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Água mineral</h4>
+                    <p class="card-text"></p>
+                    <p class="preco"><b>R$ 5,00</b></p>
+                </div>
+            </div>
+       </div>
+       <li class="cardapio">Promoções</li>
+        <div id="promocoes">
+          <div class="card" style="width: 18rem;">
+                <img src="img/okonomiyaki.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Okonomiyaki</h4>
+                    <p class="card-text">É uma saborosa panqueca japonesa frita ou grelhada em uma chapa de ferro (teppan). Vocẽ pode escolher os adiconais.</p>
+                    <p class="preco"><b>R$ 28,00</b></p>
+                </div>
+          </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/Kakigori.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Kakigori</h4>
+                    <p class="card-text">Tradicional raspadinha japonesa, feita com blocos de gelo finamente raspados, cobertos com xaropes doces e diversos acompanhamentos</p>
+                    <p class="preco"><b>R$ 15,00</b></p>
+                </div>
+            </div>
+        
      </ul>
 
 
      <!-- TODO: Adicionar itens com descrições, preços e imagens -->
-     <p class="mt-3">
-       [Detalhes dos itens.] Cada item deve ter nome, descrição, preço e,
-       opcionalmente, uma imagem. Destaque também os "Especiais do Dia" ou
-       "Pratos sazonais".
-     </p>
+     
    </div>
  </section>
 
 
  <!-- ================== 3. SOBRE NÓS ================== -->
  <section id="sobre" class="bg-light py-5">
-   <div class="container">
-     <h2 class="mb-3">Sobre Nós</h2>
+    <div class="container">
+        <h2 class="mb-5 text-center">Sobre Nós</h2>
 
+        <div class="row">
 
-     <h3 class="h5 mt-3">História do Restaurante</h3>
-     <p>
-       [História.] Conte como o restaurante foi criado, qual a inspiração,
-       valores e missão. Este texto ainda é fictício e deve ser substituído por
-       uma história original.
-     </p>
+            <div class="col-lg-8">
+                
+                <h3 class="h5 mb-3">História do Restaurante</h3>
+                <p id="historia">
+                    Hana Suzuki nasceu em Kyoto, no Japão, em uma família com forte tradição no cultivo de chá. Sua paixão pela cozinha, no entanto, floresceu ao observar a precisão e a filosofia do preparo dos alimentos. Com a inspiração diária da sua mãe cozinhando, além da sua contante paixão na cozinha, foi estudante cada vez mais, procurando sempre melhorar nas técnicas. Com muito esforço abriu o Oishī aji e hoje é uma das chefes mais renomadas do mundo, além de ter um dos restaurantes mais visitados quando se trata de comida japonesa. <br>Ela e sua equipe extremamante preparada e competente para realizar o seus pratos ganham destaques por todo o mundo, mas o seu país preferido continua sendo o Brasil. Com todo esse reconhecimento, Hana planeja abrir cada vez mais outros restaurantes por todo o mundo.
+                </p>
+                
+                <h3 id="premio" class="h5 mt-4 mb-3">Prêmios e Reconhecimentos</h3>
+                <div class="vstack gap-3">
+                    <div class="p-2">#1 Prêmio de melhor comida japonesa do Brasil.</div>
+                    <div class="p-2">#2 Prêmio de melhor Chef brasileira.</div>
+                    <div class="p-2">#3 Prêmio de restaurante de comida japonesa mais visitado do Brasil. </div>
+                </div>
 
-
-     <h3 class="h5 mt-3">Perfil do Chef</h3>
-     <p>
-       [Perfil do chef.] Apresente o chef ou a equipe de culinária, falando
-       sobre formação, especialidades e conquistas relevantes. Os alunos podem
-       futuramente adicionar uma foto em forma de card.
-     </p>
-
-
-     <h3 class="h5 mt-3">Prêmios e Reconhecimentos</h3>
-     <p>
-       [Prêmios.] Liste prêmios, reconhecimentos ou destaques em revistas,
-       blogs gastronômicos, etc. Os alunos podem usar uma lista, badges ou
-       outro componente Bootstrap.
-     </p>
-   </div>
- </section>
+            </div> <div class="col-lg-4">
+                
+                <h3 class="h5 mt-lg-0 mt-4 mb-3">Perfil do Chef</h3>
+                
+                <div id="perfil" class="card">
+                    <img src="img/cozinheira.jpg" class="card-img-top" alt="Hana Suzuki">
+                    <div class="card-body">
+                        <h4>Hana Suzuki</h4>
+                        <p class="card-text">Hana iniciou sua jornada na renomada escola de culinária Tsuji Culinary Institute e depois concluiu Mestrado em Edomae-Sushi. Passou dois anos estudando técnicas de sauce e pâtisserie na França e, posteriormente, mergulhou na vibrante culinária Nikkei no Peru. Com toda essa experiência, decidiu abrir seu próprio restaurante: <b>Oishī aji.</b></p>
+                    </div>
+                </div>
+            </div> </div> </div>
+</section>
 
 
  <!-- ================== 4. RESERVAS ================== -->
@@ -205,22 +374,111 @@
      <h2 class="mb-3">Reservas</h2>
 
 
-     <h3 class="h5 mt-3">Formulário de Reserva</h3>
+     <h3 id="reservas" class="h5 mt-3">Formulário de Reserva</h3>
      <p>
-       [Formulário de reservas.] Aqui os alunos devem criar um formulário
-       usando componentes de formulário do Bootstrap, com campos para:
-       data, horário, número de pessoas, nome, telefone e e-mail.
+      <form class="row g-3 needs-validation" novalidate>
+
+          <div class="col-md-6 position-relative">
+              <label for="validationTooltip01" class="form-label">Nome Completo</label>
+              <input type="text" class="form-control" id="validationTooltip01" placeholder="Seu nome" required>
+              <div class="valid-tooltip">
+                  Parece ótimo!
+              </div>
+              <div class="invalid-tooltip">
+                  Por favor, preencha o seu nome.
+              </div>
+          </div>
+
+          <div class="col-md-3 position-relative">
+              <label for="validationTooltip02" class="form-label">Telefone</label>
+              <input type="tel" class="form-control" id="validationTooltip02" placeholder="(XX) XXXXX-XXXX" required>
+              <div class="valid-tooltip">
+                  Certo!
+              </div>
+              <div class="invalid-tooltip">
+                  Por favor, forneça um número de telefone válido.
+              </div>
+          </div>
+
+          <div class="col-md-3 position-relative">
+              <label for="validationTooltip03" class="form-label">Pessoas</label>
+              <input type="number" class="form-control" id="validationTooltip03" min="1" max="20" placeholder="Ex: 4" required>
+              <div class="invalid-tooltip">
+                  Selecione a quantidade de pessoas (mínimo 1).
+              </div>
+          </div>
+
+          <div class="col-md-6 position-relative">
+              <label for="validationTooltip04" class="form-label">E-mail</label>
+              <div class="input-group has-validation">
+                  <span class="input-group-text" id="validationTooltipEmailPrepend">@</span>
+                  <input type="email" class="form-control" id="validationTooltip04" placeholder="seu.email@exemplo.com" aria-describedby="validationTooltipEmailPrepend" required>
+                  <div class="invalid-tooltip">
+                      Por favor, escolha um e-mail válido.
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-3 position-relative">
+              <label for="validationTooltip05" class="form-label">Data</label>
+              <input type="date" class="form-control" id="validationTooltip05" required>
+              <div class="invalid-tooltip">
+                  Por favor, selecione a data da reserva.
+              </div>
+          </div>
+
+          <div class="col-md-3 position-relative">
+              <label for="validationTooltip06" class="form-label">Horário</label>
+              <input type="time" class="form-control" id="validationTooltip06" required>
+              <div class="invalid-tooltip">
+                  Por favor, forneça um horário válido.
+              </div>
+          </div>
+
+          <div class="col-12">
+              <button id="botao" class="btn btn-primary" type="submit">Reservar Mesa</button>
+          </div>
+      </form>
      </p>
 
 
      <!-- TODO: Formulário Bootstrap de reserva -->
 
 
-     <h3 class="h5 mt-3">Política de Reservas</h3>
+     <h3 id="politica" class="h5 mt-3">Política de Reservas</h3>
      <p>
-       [Política de reservas.] Descreva regras claras sobre cancelamentos,
-       tolerância de atraso, confirmação por e-mail/WhatsApp etc. Os alunos
-       podem usar um componente como accordion para organizar essas políticas.
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              Tolerância de atraso
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">O máximo de tolerâcia de atraso é de 40 minutos. Caso passe desse limite, a reseva não será mais aceita.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              A confirmação da reserva
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Depois do formulário da reserva for preenchido e aceito, chegará a confimação pelo WhatsApp e pelo E-mail.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Cancelamento de reservas
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">O cancelamento pode ser feito pelo WhatsApp do restaurante(nas informações abaixo), em até 3 horas antes do horário da reserva.</div>
+          </div>
+        </div>
+      </div>
      </p>
    </div>
  </section>
@@ -231,93 +489,232 @@
    <div class="container">
      <h2 class="mb-3">Galeria</h2>
      <p>
-       [Galeria de fotos.] Nesta seção, os alunos devem criar uma galeria com
-       imagens em alta resolução de pratos, eventos e do interior do
-       restaurante, usando grid do Bootstrap e/ou componentes como cards.
+        <figure class="figure">
+          <img src="img/carrossel3.jpg" class="figure-img img-fluid rounded" alt="...">
+          <figcaption class="figure-caption">A parte externa do restaurante.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="img/carrossel5.webp" class="figure-img img-fluid rounded" alt="...">
+          <figcaption class="figure-caption">Ilustrações dos pratos.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="img/carrossel4.webp" class="figure-img img-fluid rounded" alt="...">
+          <figcaption class="figure-caption">Parte interna do restaurante.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="img/galeria5.jpg" class="figure-img img-fluid rounded" alt="...">
+          <figcaption class="figure-caption">Ilustrações dos pratos.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="img/galeria4.jpg" class="figure-img img-fluid rounded" alt="...">
+          <figcaption class="figure-caption">Ilustrações dos pratos.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="img/galeria1.webp" class="figure-img img-fluid rounded" alt="...">
+          <figcaption class="figure-caption">Parte interna do restaurante.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="img/galeria3.jpg" class="figure-img img-fluid rounded" alt="...">
+          <figcaption class="figure-caption">Ilustrações dos pratos.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="img/galeria2.jpg" class="figure-img img-fluid rounded" alt="...">
+          <figcaption class="figure-caption">Primeiro andar do restaurante.</figcaption>
+        </figure>
+
      </p>
 
 
      <!-- TODO: Grid de imagens / cards com fotos -->
 
 
-     <h3 class="h5 mt-3">Avaliações de Clientes</h3>
+     <h3 class="h5 mt-3"></h3>
      <p>
-       [Depoimentos.] Inclua comentários positivos de clientes, com nome,
-       talvez uma nota em estrelas e um pequeno texto. Os alunos podem usar
-       cards ou listas estilizadas do Bootstrap.
-     </p>
+       
+      <section id="comentarios" class="py-5 bg-light">
+    <div class="container">
+        <h2 id="avaliacoes" class="mb-5 text-center">Avaliações dos clientes</h2>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title mb-1">Maria</h5>
+                        <h6 class="card-subtitle mb-3 text-muted small">Cliente verificada</h6>
+                        <p class="card-text">Achei o restaurante muito moderno e aconchegante, além da comida ser uma maravilha. Recomendo o Tonkatsu!</p>
+                        <div class="rating mt-auto">
+                             <span class="text-warning">
+                                ★★★★★
+                            </span>
+                            <span class="text-muted small">(5.0)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title mb-1">João Silva</h5>
+                        <h6 class="card-subtitle mb-3 text-muted small">Visitante</h6>
+                        <p class="card-text">O Yakisoba é um dos melhores que já experimentei na cidade. O serviço foi rápido e atencioso. Voltarei mais vezes com certeza.</p>
+                        <div class="rating mt-auto">
+                            <span class="text-warning">
+                                ★★★★☆
+                            </span>
+                             <span class="text-muted small">(4.0)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title mb-1">Ana C.</h5>
+                        <h6 class="card-subtitle mb-3 text-muted small">Cliente frequente</h6>
+                        <p class="card-text">Ótimas opções de entradas e sobremesas. O Mochi é divino. A única observação é que o ambiente estava um pouco barulhento no horário de pico.</p>
+                        <div class="rating mt-auto">
+                            <span class="text-warning">
+                                ★★★★☆
+                            </span>
+                             <span class="text-muted small">(4.5)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
    </div>
  </section>
 
 
  <!-- ================== 6. FALE CONOSCO ================== -->
  <section id="contato" class="py-5">
-   <div class="container">
-     <h2 class="mb-3">Fale Conosco</h2>
+    <div class="container">
+        <h2 id="titulo" class="mb-5 text-center">Entre em Contato</h2>
+        
+        <div class="row g-4"> 
+            
+            <div id="endereco" class="col-lg-4 d-flex flex-column justify-content-start"> 
+                
+                <h3 id="nomeInfo" class="h4 mb-4">Informações</h3>
+                
+                <ul class="list-unstyled">
+                    <li class="d-flex align-items-start mb-3">
+                        <i class="bi bi-geo-alt-fill text-danger me-3 fs-4"></i>
+                        <div>
+                            <h5 class="nomes">Endereço</h5>
+                            <p class="mb-0">Av. Álvaro Otacílio, 2933 - Ponta Verde, Maceió - AL, 57035-180</p>
+                            <p class="mb-0">CEP: 57035-030</p>
+                        </div>
+                    </li>
 
+                    <li class="d-flex align-items-start mb-3">
+                        <i class="bi bi-telephone-fill text-primary me-3 fs-4"></i>
+                        <div>
+                            <h5 class="nomes">Telefone</h5>
+                            <a href="tel:+5582978345672" class="text-white">(82) 97834-5672</a> 
+                            <span class="text-muted small d-block">Reservas e Delivery</span>
+                        </div>
+                    </li>
 
-     <h3 class="h5 mt-3">Informações de Contato</h3>
-     <p>
-       [Dados de contato.] Adicione endereço, telefone, e-mail e, se quiser,
-       um mapa incorporado (Google Maps). Os alunos devem substituir esse
-       texto por informações fictícias ou reais para o restaurante.
-     </p>
+                    <li class="d-flex align-items-start mb-3">
+                        <i class="bi bi-envelope-fill text-success me-3 fs-4"></i>
+                        <div>
+                            <h5 class="nomes">E-mail</h5>
+                            <a href="mailto:Oishī_aji@gmail.com" class="text-white">Oishī_aji@gmail.com</a>
+                        </div>
+                    </li>
+                </ul>
 
+                <div class="mt-4 pt-4 border-top">
+                    <h5 class="nomes">Horário de Funcionamento</h5>
+                    <p class="mb-0">Segunda a sexta: 17h00 - 00:00</p>
+                    <p>Sábados e domingos: 17h00 - 01h00</p>
+                    <p>Feriados: Fechados</p>
+                </div>
+            </div> <div class="col-lg-8"> 
+                
+                <h3 id="nomeForm" class="h4 mb-3">Comente sua opinão aqui:</h3>
+                
+                <form>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="inputNome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="inputNome" placeholder="Seu nome completo">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="nome@exemplo.com">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="floatingTextarea2" class="form-label">Comentários</label>
+                        <textarea class="form-control" placeholder="Faça comentários..." id="floatingTextarea2" style="height: 120px"></textarea>
+                    </div>
+                    
+                    <button id="botao" class="btn btn-primary" type="submit">Enviar Mensagem</button>
+                </form>
 
-     <!-- TODO: Organizar informações de contato e mapa usando o grid do Bootstrap -->
-
-
-     <h3 class="h5 mt-3">Formulário de Contato</h3>
-     <p>
-       [Formulário de contato.] Crie um formulário com campos para nome,
-       e-mail, assunto e mensagem, usando os componentes de formulário do
-       Bootstrap.
-     </p>
-
-
-     <!-- TODO: Formulário Bootstrap de contato -->
-   </div>
- </section>
-
-
+            </div> </div> </div>
+</section>
  <!-- ================== 7. PEDIDOS ONLINE / ENTREGA ================== -->
  <section id="pedidos" class="bg-light py-5">
    <div class="container">
      <h2 class="mb-3">Pedidos Online e Entrega</h2>
      <p>
-       [Pedidos online.] Descreva como o cliente pode fazer pedidos para
-       retirada ou entrega (por telefone, site, aplicativo, WhatsApp etc.).
-     </p>
-     <p>
-       [Áreas de entrega.] Liste os bairros atendidos e os tempos estimados de
-       entrega. Os alunos podem usar listas, cards ou tabelas para organizar
-       essas informações.
+       
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              Como fazer pedidos online?
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Entre em contado com o nosso WhatsApp ou ligue para fazer o seu pedido.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Quanto tempo para a entrega?
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Entrega em Maceió: 30 minutos <br>Entrega para regioẽs próxima de Maceió: 1 hora</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Em caso de cancelamento?
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">O cancelamento pode ser feito no máximo em 20 minutos. Caso o cancelamento seja feito depois desse tempo, não será aceito, sendo impossível o retorno do pagamento.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              E o pagamento?
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">O pagamento deve ser feito por via pix, número do telefone, e precisa mandar o comprovante pelo WhatsApp. Se for aceito, chegará um email e uma mensagem no WhatsApp confirmando</div>
+          </div>
+        </div>
+      </div>
      </p>
    </div>
  </section>
 
-
- <!-- ================== 9–10. PROMOÇÕES & AVALIAÇÕES ONLINE ================== -->
- <section id="promocoes" class="py-5">
-   <div class="container">
-     <h2 class="mb-3">Promoções Especiais</h2>
-     <p>
-       [Promoções.] Destaque promoções em andamento, como descontos em dias
-       específicos, programas de fidelidade ou combos especiais. Os alunos
-       podem usar componentes como alertas, cards ou badges para chamar
-       atenção.
-     </p>
-
-
-     <h3 class="h5 mt-3">Avaliações Online</h3>
-     <p>
-       [Links para avaliações.] Inclua links para plataformas de avaliação
-       (por exemplo: Google Avaliações, TripAdvisor, Yelp etc.) e destaque as
-       notas médias do restaurante. Os alunos podem usar listas e badges do
-       Bootstrap para isso.
-     </p>
-   </div>
- </section>
 
 
  <!-- ================== FOOTER ================== -->
@@ -332,3 +729,5 @@
  </script>
 </body>
 </html>
+
+
